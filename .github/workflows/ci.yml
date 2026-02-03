@@ -19,3 +19,10 @@ jobs:
 
     - name: Run pre-commit
       uses: pre-commit/action@v3.0.1
+
+    - name: Snyk Open Source Analysis
+      uses: snyk/actions/python-3.10@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: test
