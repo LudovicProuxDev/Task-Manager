@@ -37,3 +37,10 @@ jobs:
       run: snyk test --file=backend/requirements.txt
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+    - name: Snyk Infrastructure as Code (Dockerfile)
+      uses: snyk/actions/iac@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        file: backend/Dockerfile
