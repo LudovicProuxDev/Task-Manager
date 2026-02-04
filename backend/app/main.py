@@ -43,8 +43,8 @@ def admin_stats(x_api_key: str | None = Header(default=None)):
 
 @app.post("/import")
 def import_yaml(payload: str = Body(embed=True)):
-    data = yaml.full_load(payload)
-    return {"imported": True, "keys": list(data.keys()) if isinstance(data, dict) else "n/a"}
+    data = yaml.safe_load(payload)
+    return {"status": "success", "data": data}
 
 @app.get("/tasks", response_model=list[TaskOut])
 def list_tasks(db: Session = Depends(get_db)):
