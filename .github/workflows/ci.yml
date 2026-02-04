@@ -42,5 +42,3 @@ jobs:
       run: snyk iac test backend/Dockerfile
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      with:
-        file: backend/Dockerfile
