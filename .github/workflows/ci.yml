@@ -39,6 +39,6 @@ jobs:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
     - name: Snyk Infrastructure as Code (Dockerfile)
-      run: snyk iac test backend/Dockerfile
+      run: snyk iac test --file=backend/Dockerfile
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
