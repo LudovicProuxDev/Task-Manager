@@ -1,6 +1,6 @@
 import os
 from fastapi.testclient import TestClient
-from main import app # Vérifie que le nom du fichier est bien main.py
+from app.main import app # Vérifie que le nom du fichier est bien main.py
 
 client = TestClient(app)
 
