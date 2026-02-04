@@ -1,5 +1,5 @@
 # 1. Utilise une version stable et spécifique
-FROM python:3.15-rc-slim-trixie
+FROM python:3.12-slim-trixie
 
 # 2. Empêche Python de générer des fichiers .pyc et d'utiliser un buffer pour les logs
 ENV PYTHONDONTWRITEBYTECODE=1
