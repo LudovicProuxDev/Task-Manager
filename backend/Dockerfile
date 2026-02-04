@@ -7,12 +7,12 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-# 3. Optimisation du cache : on installe les dépendances d'abord
-COPY backend/requirements.txt /app/
+# 3. Optimisation du cache
+COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 4. Copie le reste du code (en supposant que tu es dans le dossier backend)
-COPY backend/ /app/
+# 4. Copie le contenu actuel du dossier vers /app
+COPY . /app/
 
 # 5. Sécurité : Création d'un utilisateur non-privilégié
 RUN adduser --disabled-password --gecos "" appuser
