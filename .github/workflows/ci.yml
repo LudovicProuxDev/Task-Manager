@@ -21,9 +21,9 @@ jobs:
       uses: pre-commit/action@v3.0.1
 
     - name: Snyk Open Source Analysis
-      uses: snyk/actions/python-3.10@master
+      uses: snyk/actions/python@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-        args: --file=requirements.txt
+        args: --file=backend/requirements.txt
         command: test
